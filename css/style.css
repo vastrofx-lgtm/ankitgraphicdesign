@@ -1912,3 +1912,103 @@ body.page-leaving .page-transition-overlay {
     grid-template-columns: 1fr;
   }
 }
+
+/* --- Tech Meets Art Section --- */
+.tech-art-section {
+  padding: 100px 0;
+  overflow: hidden;
+  background: var(--bg-color);
+  position: relative;
+}
+
+.tech-art-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.tech-art-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 15px;
+}
+
+.tech-art-title .highlight-pixel {
+  color: #00f0ff;
+}
+
+.tech-art-title .highlight-ion {
+  color: #ff0055;
+}
+
+.tech-art-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.marquee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.marquee-row {
+  display: flex;
+  width: max-content;
+  gap: 8px;
+}
+
+.marquee-row-1 {
+  animation: scroll-left 40s linear infinite;
+}
+
+.marquee-row-2 {
+  animation: scroll-right 45s linear infinite;
+}
+
+.marquee-row-3 {
+  animation: scroll-left 50s linear infinite;
+}
+
+.marquee-item {
+  height: 350px;
+  width: max-content;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-card);
+  flex-shrink: 0;
+  display: flex;
+}
+
+.marquee-item img {
+  display: block;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 4px)); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(calc(-50% - 4px)); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+  .marquee-item {
+    height: 250px;
+  }
+}
