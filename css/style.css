@@ -451,6 +451,7 @@ body.page-leaving .page-transition-overlay {
   align-items: center;
   position: relative;
   padding-top: var(--header-height);
+  padding-bottom: 120px;
   overflow: hidden;
 }
 
@@ -1557,6 +1558,13 @@ body.page-leaving .page-transition-overlay {
   padding: 140px 0 100px;
 }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
 .contact-header {
   text-align: center;
   margin-bottom: 60px;
@@ -1814,8 +1822,8 @@ body.page-leaving .page-transition-overlay {
     margin: 0 auto;
   }
 
-  .contact-section .container {
-    grid-template-columns: 1fr;
+  .contact-section .container, .contact-grid {
+    grid-template-columns: 1fr !important;
     gap: 48px;
   }
 
@@ -1859,7 +1867,17 @@ body.page-leaving .page-transition-overlay {
   }
 
   .hero-title {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
     letter-spacing: -1px;
+    line-height: 1.2;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .hero {
+    padding-bottom: 80px;
   }
 
   .footer-top {
@@ -1978,19 +1996,18 @@ body.page-leaving .page-transition-overlay {
 
 .marquee-item {
   height: 350px;
-  width: max-content;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
   background: var(--bg-card);
   flex-shrink: 0;
-  display: flex;
 }
 
 .marquee-item img {
   display: block;
   height: 100%;
   width: auto;
+  max-width: none;
   object-fit: cover;
   border: none;
   margin: 0;
